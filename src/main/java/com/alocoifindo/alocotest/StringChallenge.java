@@ -30,14 +30,10 @@ class StringChallenge {
         boolean allB = false;
         boolean allC = false;
         boolean exit = false;
-        boolean oneChar = false;
         while (!exit) {
             for (int i = 0; i < finalString.length(); i += 1) {
                 try {
                     if (i < (finalString.length())) {
-                        if (finalString.length() == 1) {
-                            oneChar = true;
-                        }
                         String letters = finalString.charAt(i) + "" + finalString.charAt(i + 1);
 
                         switch (letters) {
@@ -70,12 +66,7 @@ class StringChallenge {
                         }
                         System.out.println(finalString);
                     }
-                } catch (StringIndexOutOfBoundsException siooe) {
-                    if ((allA == true || allB == true || allC == true) || oneChar == true) {
-                        result = finalString.length();
-                        exit = true;
-                    }
-                }
+                } catch (StringIndexOutOfBoundsException siooe) {}
                 for (int it = 0; it < finalString.length(); it++) {
                     if (Character.toString(finalString.charAt(it)).matches("a")) {
                         allA = true;
