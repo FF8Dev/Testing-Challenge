@@ -56,15 +56,6 @@ class StringChallenge {
                                 letters = "b";
                                 finalString.replace(i, i + 2, letters);
                                 break;
-                            case "aa":
-                                allA = true;
-                                break;
-                            case "bb":
-                                allB = true;
-                                break;
-                            case "cc":
-                                allC = true;
-                                break;
                             default:
                                 break;
                         }
