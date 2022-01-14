@@ -11,11 +11,20 @@ import java.util.*;
  *
  * @author facundoferreyra
  */
+
+/*
+    Return the smallest number you can get through the following reduction method. 
+    Only the letters a, b, and c will be given in input and takes two different 
+    adjacent characters and replace it with the third. 
+    
+    For example "ac" can be replaced with "b" but "aa" cannot be replaced with anything. 
+    This method is done repeatedly until the string cannot be further reduced, 
+    and the length of the resulting string is outputted.
+ */
 class StringChallenge {
 
-    public static int StringChallenge(String str) {
-        // code goes here 
-        StringBuilder finalString = new StringBuilder(str);
+    public static int StringChallenge(String input) {
+        StringBuilder finalString = new StringBuilder(input);
         int result = 0;
         boolean allA = false;
         boolean allB = false;
@@ -76,7 +85,8 @@ class StringChallenge {
                         allA = false;
                         break;
                     }
-                } for (int it = 0; it < finalString.length(); it++) {
+                }
+                for (int it = 0; it < finalString.length(); it++) {
                     if (Character.toString(finalString.charAt(it)).matches("b")) {
                         allB = true;
                         allA = false;
@@ -85,7 +95,8 @@ class StringChallenge {
                         allB = false;
                         break;
                     }
-                } for (int it = 0; it < finalString.length(); it++) {
+                }
+                for (int it = 0; it < finalString.length(); it++) {
                     if (Character.toString(finalString.charAt(it)).matches("c")) {
                         allC = true;
                         allA = false;
